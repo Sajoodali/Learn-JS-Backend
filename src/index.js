@@ -3,6 +3,10 @@ import { connectDB } from "./db/index.js";
 import mongoose from "mongoose";
 import { DB_NAME } from "./constants";
 
+
+
+connectDB()
+
 // timeline 30min
 
 // import express from "express";
