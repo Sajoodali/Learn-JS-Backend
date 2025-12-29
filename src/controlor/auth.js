@@ -13,3 +13,7 @@ export const logout = (req, res) => {
 export const porfile = (req, res) => {
     res.send("profile");
 };
+
+export const update = (req, res) => {
+    res.send("update");
+};
