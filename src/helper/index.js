@@ -1,5 +1,5 @@
 console.log("helper");
 
 
-export const log =>(){
+export const log =()=>{
 console.log("github stick");}
