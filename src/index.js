@@ -1,10 +1,8 @@
-import { connectDB } from "./db/index.js";
-
-import mongoose from "mongoose";
-import { DB_NAME } from "./constants";
+import dotenv from "dotenv";
+import connectDB  from "./db/db.js";
 
 
-
+dotenv.config();
 connectDB()
 
 // timeline 30min
@@ -12,20 +10,4 @@ connectDB()
 import express from "express";
 const app = express();
 
-
-;(async () => {
-  try {
-    await mongoose.connect(`${process.env.MONGODB_URL}/${DB_NAME}`);
-    app.on("ERROr", (error) => {
-      console.log("ERROR: ", error);
-      throw error;
-    });
-
-    app.listen(process.env.PORT, () => {
-      console.log(`App is listening on Port ${process.env.PORT}`);
-    });
-  } catch (error) {
-    console.error("ERROR: ", error);
-    throw error;
-  }
-})();
+const PORT = process.env.PORT || 3000;
