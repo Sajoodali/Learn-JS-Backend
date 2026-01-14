@@ -26,6 +26,11 @@ app.use((req, res) => {
   res.status(404).send('Route not found');  
 });
 
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
