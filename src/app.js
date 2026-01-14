@@ -22,6 +22,10 @@ app.post('/data', express.json(), (req, res) => {
     res.status(201).json({ message: 'Data received', data: receivedData });
 });
 
+app.use((req, res) => {
+  res.status(404).send('Route not found');  
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
