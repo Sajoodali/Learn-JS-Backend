@@ -17,6 +17,11 @@ app.get('/health', (req, res) => {
   res.status(200).send('OK');
 });
 
+app.post('/data', express.json(), (req, res) => {
+  const receivedData = req.body;
+    res.status(201).json({ message: 'Data received', data: receivedData });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
