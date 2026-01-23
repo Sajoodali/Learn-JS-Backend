@@ -13,9 +13,9 @@ db.on("error", console.error.bind(console, "connection error:"));
 console.log("Database connected successfully");
 
 const userSchema = new Schema({
-  name: String,
-  email: String,
-  password: String,
+  username: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
 },
 { timestamps: true }
 );
