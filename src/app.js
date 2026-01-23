@@ -24,3 +24,5 @@ const userSchema = new Schema({
 
 
 console.log("hi");
+console.log("hi");
+
