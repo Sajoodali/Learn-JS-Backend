@@ -1,10 +1,10 @@
-import mongooes,{Schema} from "mongoose";
+import mongooes, { Schema } from "mongoose";
 
 
 mongooes.connect("mongodb://localhost:27017/mydatabase", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});      
+});
 const db = mongooes.connection;
 
 db.on("error", console.error.bind(console, "connection error:"));
@@ -17,6 +17,7 @@ const userSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   hobbies: [String],
+  usertype:{type:string},
 },
 { timestamps: true }
 );
