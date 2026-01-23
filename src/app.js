@@ -21,3 +21,6 @@ const userSchema = new Schema({
 },
 { timestamps: true }
 );
+
+
+console.log("hi");
