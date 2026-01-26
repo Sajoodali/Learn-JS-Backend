@@ -27,7 +27,16 @@ export const register = (req, res) => {
 };
 
 export const logout = (req, res) => {
-    res.send("logout");
+    const { userId } = req.body;
+    console.log("logout", userId);
+    try {
+        if (!userId) {
+            return res.status(400).json({ message: "User ID is required" });
+        }
+        res.status(200).json({ message: "User logged out successfully" });
+    } catch (error) {
+        res.status(500).json({ message: "Internal server error" });
+    }
 };
 
 export const porfile = (req, res) => {
